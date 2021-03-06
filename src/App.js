@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Banner from './components/Banner';
 import Header from './components/Header';
 import ThemeProvider from './styles/ThemeProvider';
 
@@ -8,6 +9,7 @@ function App() {
     <ThemeProvider>
       <div className='App'>
         <Header />
+        <Banner />
       </div>
     </ThemeProvider>
   );
