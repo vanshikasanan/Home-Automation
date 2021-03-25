@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
   },
   name: {
     //position: 'fixed',
+    color: 'white',
     marginRight: '1.8rem',
     fontSize: 15,
     paddingTop: 5,
