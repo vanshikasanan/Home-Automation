@@ -1,0 +1,22 @@
+.login{
+    display:grid;
+    place-items:center;
+    height: 100vh;
+
+}
+
+.login__container{
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 14px -3px rgba(0,0,0,0.7);
+}
+
+.login__container > img{
+    height: 200px;
+    width: 200px;
+    margin-bottom: 50px;
+}

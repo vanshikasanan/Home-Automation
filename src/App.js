@@ -1,17 +1,52 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
-import Banner from './components/Banner';
-import Header from './components/Header';
+
+import Login from './components/Login';
 import ThemeProvider from './styles/ThemeProvider';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, db } from "./firebase";
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import firebase from "firebase";
+import Home from './components/Home';
 
 function App() {
+
+  const [user, loading] = useAuthState(auth);
+
+  useEffect(() => {
+    if(user){
+      db.collection('users').doc(user.uid).set({
+      email: user.email,
+      lastSeen: firebase.firestore.FieldValue.serverTimestamp(),
+
+      },
+      {merge :true}
+    
+      );
+    }
+  }, [user])
+
   return (
-    <ThemeProvider>
-      <div className='App'>
-        <Header />
-        <Banner />
-      </div>
-    </ThemeProvider>
+    <div className="app">
+      <Router>
+      {!user ? (
+          <Login />
+        ) : (
+          <Switch>
+            <Route path="/">
+              <ThemeProvider>
+              <Home/>
+              </ThemeProvider>
+              
+            </Route>
+          </Switch>
+        )}
+     
+      </Router>
+
+    </div>
+    
+    
   );
 }
 

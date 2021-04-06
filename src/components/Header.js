@@ -3,6 +3,8 @@ import '../styles/Header.css';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Typography } from '@material-ui/core';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { auth } from '../firebase';
+
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -55,6 +57,7 @@ function Header() {
               Hey Name
             </Typography>
             <Button
+              onClick= {() => auth.signOut()}
               startIcon={<ExitToAppIcon />}
               className={classes.logout}
               color='primary'
