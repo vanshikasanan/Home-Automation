@@ -1,8 +1,16 @@
-import { Box, Grid, Typography } from '@material-ui/core';
+import { Box, Grid, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import LightBulb from './Devices/LightBulb';
 
+const useStyles = makeStyles((theme) => ({
+  align: {
+    justifyContent: 'center',
+    display: 'flex',
+  },
+}));
+
 function ControlPanel() {
+  const classes = useStyles();
   return (
     <Grid style={{ marginLeft: '30px', padding: '25px' }}>
       <Grid container spacing={2}>
@@ -13,7 +21,7 @@ function ControlPanel() {
             </Box>
           </Typography>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={4} className={classes.align}>
           <LightBulb />
         </Grid>
       </Grid>
