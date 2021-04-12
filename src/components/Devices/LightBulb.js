@@ -74,7 +74,10 @@ function LightBulb() {
         console.log(err);
       }
     };
+    //const interval = setInterval(async () => {
     onOff();
+    // }, 10000);
+    // return () => clearInterval(interval);
   }, []);
 
   const handleChange = async (e) => {
