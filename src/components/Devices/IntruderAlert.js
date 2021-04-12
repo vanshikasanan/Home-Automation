@@ -4,7 +4,7 @@ import { ThingSpeakReadAPI, ThingSpeakWriteAPI } from '../../utils/utils';
 import thingSpeakAPI from '../../utils/axios';
 import IOSSwitch from '../IOSSwitch';
 
-function LightBulb() {
+function IntruderAlert() {
   const [state, setState] = useState(false);
 
   useEffect(() => {
@@ -12,9 +12,9 @@ function LightBulb() {
       try {
         const res = await thingSpeakAPI({
           method: 'get',
-          url: ThingSpeakReadAPI(3),
+          url: ThingSpeakReadAPI(6),
         });
-        console.log(res.data, 'lightbulb');
+        console.log(res.data, 'IntruderAlert');
         setState(res?.data === 1 ? true : false);
       } catch (err) {
         console.log(err);
@@ -32,7 +32,7 @@ function LightBulb() {
       setState(e.target.checked);
       await thingSpeakAPI({
         method: 'post',
-        url: ThingSpeakWriteAPI(`field3=${data}`),
+        url: ThingSpeakWriteAPI(`field6=${data}`),
       });
       console.log(e.target.checked, 'status');
     } catch (err) {
@@ -42,11 +42,13 @@ function LightBulb() {
   };
 
   return (
-    <FormControlLabel
-      control={<IOSSwitch name='lightbulb' id='3' checked={state} onChange={(e) => handleChange(e)} />}
-      label='Light Bulb'
-    />
+    <>
+      <FormControlLabel
+        control={<IOSSwitch name='intruderalert' id='6' checked={state} onChange={(e) => handleChange(e)} />}
+        label='Intruder Alert'
+      />
+    </>
   );
 }
 
-export default LightBulb;
+export default IntruderAlert;
