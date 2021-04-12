@@ -10,7 +10,7 @@ import firebase from 'firebase';
 import Home from './components/Home';
 
 function App() {
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     if (user) {
