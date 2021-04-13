@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
   align: {
     justifyContent: 'center',
     display: 'flex',
+    marginBottom: 10,
   },
 }));
 
@@ -27,14 +28,18 @@ function ControlPanel() {
           </Typography>
         </Grid>
         <Buzzer />
-        <Grid item xs={12} md={4} className={classes.align}>
-          <LightBulb />
-        </Grid>
-        <Grid item xs={12} md={4} className={classes.align}>
-          <Temperature />
-        </Grid>
-        <Grid item xs={12} md={4} className={classes.align}>
-          <IntruderAlert />
+        <Grid item xs={12}>
+          <Grid container>
+            <Grid item xs={12} md={4} className={classes.align}>
+              <LightBulb />
+            </Grid>
+            <Grid item xs={12} md={4} className={classes.align}>
+              <Temperature />
+            </Grid>
+            <Grid item xs={12} md={4} className={classes.align}>
+              <IntruderAlert />
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
