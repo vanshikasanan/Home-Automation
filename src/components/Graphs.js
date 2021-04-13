@@ -1,47 +1,38 @@
+import { Grid } from '@material-ui/core';
 import React from 'react';
-import '../styles/Graphs.css';
 import { GraphsRead } from '../utils/utils';
 import Graphitem from './Graphitem';
 
 function Graphs() {
   return (
-    <div className='graph'>
-      <h1>Graphs</h1>
-      <div className='graph__container1'>
-        <div className='graph__section'>
+    <Grid style={{ marginLeft: '0px', marginRight: '0px', padding: '0px' }}>
+      <Grid container spacing={0}>
+        <Grid item xs={12} md={4}>
           <Graphitem title='Temperature' link={GraphsRead(1)} />
-        </div>
-        <div className='graph__section'>
+        </Grid>
+        <Grid item xs={12} md={4}>
           <Graphitem title='Ultrasonic' link={GraphsRead(2)} />
-        </div>
-
-        <div className='graph__section'>
+        </Grid>
+        <Grid item xs={12} md={4}>
           <Graphitem title='Light-Button' link={GraphsRead(3)} />
-        </div>
-      </div>
-
-      <div className='graph__container2'>
-        <div className='graph__section'>
+        </Grid>
+        <Grid item xs={12} md={4}>
           <Graphitem title='Photo-Resistor' link={GraphsRead(4)} />
-        </div>
-        <div className='graph__section'>
+        </Grid>
+        <Grid item xs={12} md={4}>
           <Graphitem title='Pir-Sensor' link={GraphsRead(5)} />
-        </div>
-
-        <div className='graph__section'>
+        </Grid>
+        <Grid item xs={12} md={4}>
           <Graphitem title='Intruder-Button' link={GraphsRead(6)} />
-        </div>
-      </div>
-
-      <div className='graph__container3'>
-        <div className='graph__section'>
+        </Grid>
+        <Grid item xs={12} md={4}>
           <Graphitem title='Buzzer' link={GraphsRead(7)} />
-        </div>
-        <div className='graph__section'>
+        </Grid>
+        <Grid item xs={12} md={4}>
           <Graphitem title='Gas-Sensor' link={GraphsRead(8)} />
-        </div>
-      </div>
-    </div>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 }
 
