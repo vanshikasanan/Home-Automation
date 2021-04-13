@@ -9,7 +9,8 @@ function Home() {
       <Header />
       <Banner />
       <ControlPanel />
-      {/* <Graphs/> */}
+
+      <Graphs />
     </div>
   );
 }

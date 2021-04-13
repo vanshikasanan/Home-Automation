@@ -10,6 +10,7 @@ import firebase from 'firebase';
 import Home from './components/Home';
 import Graphs from './components/Graphs';
 
+
 function App() {
   const [user] = useAuthState(auth);
 

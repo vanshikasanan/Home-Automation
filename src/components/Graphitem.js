@@ -1,21 +1,28 @@
+import { Grid, makeStyles, Typography } from '@material-ui/core';
 import Iframe from 'react-iframe';
 import '../styles/Graphitem.css';
 
+const useStyles = makeStyles(() => ({
+  title: {
+    backgroundColor: '#0abb87',
+    color: 'white',
+    textAlign: 'center',
+    padding: '10px',
+    fontWeight: '400',
+    borderBottom: '1px solid lightgray',
+  },
+}));
 function Graphitem({ link, title }) {
+  const classes = useStyles();
   return (
-    <div className='graph__item'>
-      <div className='graph__title'>
-        <h3>{title}</h3>
-      </div>
-      <div className='graph__image'>
-        <Iframe
-          width='450'
-          height='260'
-          style={{ border: '1px solid #cccccc' }}
-          scrolling='no'
-          src={link}></Iframe>
-      </div>
-    </div>
+    <Grid container>
+      <Grid item xs={12} className={classes.title}>
+        <Typography variant='h5'>{title}</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Iframe width='100%' height='260px' src={link}></Iframe>
+      </Grid>
+    </Grid>
   );
 }
 
