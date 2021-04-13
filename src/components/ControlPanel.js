@@ -5,6 +5,8 @@ import LightBulb from './Devices/LightBulb';
 import Temperature from './Devices/Temperature';
 import '../styles/CircleRipple.scss';
 import Buzzer from './Devices/Buzzer';
+import Gassensor from './Devices/GasSensor';
+import PirSensor from './Devices/PirSensor';
 
 const useStyles = makeStyles((theme) => ({
   align: {
@@ -38,6 +40,12 @@ function ControlPanel() {
             </Grid>
             <Grid item xs={12} md={4} className={classes.align}>
               <IntruderAlert />
+            </Grid>
+            <Grid item xs={12} md={4} className={classes.align}>
+              <Gassensor />
+            </Grid>
+            <Grid item xs={12} md={4} className={classes.align}>
+              <PirSensor />
             </Grid>
           </Grid>
         </Grid>

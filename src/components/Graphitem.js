@@ -1,6 +1,5 @@
 import { Grid, makeStyles, Typography } from '@material-ui/core';
-import Iframe from 'react-iframe';
-import '../styles/Graphitem.css';
+import Iframe from 'react-iframe'
 
 const useStyles = makeStyles(() => ({
   title: {
